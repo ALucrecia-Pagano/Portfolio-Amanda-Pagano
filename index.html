@@ -1,0 +1,273 @@
+html_code = """<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Amanda Pagano | Desarrolladora Full Stack</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#f0fdfa',
+              500: '#14b8a6',
+              600: '#0d9488',
+              700: '#0f766e',
+              900: '#134e4a',
+            }
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-slate-950 text-slate-100 min-h-screen font-sans antialiased selection:bg-teal-500 selection:text-white">
+
+  <!-- Navegación -->
+  <nav class="sticky top-0 z-50 bg-slate-900/80 backdrop-blur-md border-b border-slate-800">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      <span class="text-xl font-bold tracking-tight text-white flex items-center gap-2">
+        <span class="text-teal-400">&lt;/&gt;</span> Amanda Pagano
+      </span>
+      <div class="flex items-center gap-6 text-sm font-medium">
+        <a href="#proyectos" class="text-slate-300 hover:text-teal-400 transition">Proyectos</a>
+        <a href="#stack" class="text-slate-300 hover:text-teal-400 transition">Habilidades</a>
+        <a href="#contacto" class="text-slate-300 hover:text-teal-400 transition">Contacto</a>
+        <a href="https://github.com/ALucrecia-Pagano" target="_blank" class="text-slate-400 hover:text-white text-lg transition">
+          <i class="fa-brands fa-github"></i>
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="py-20 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto text-center sm:text-left">
+    <div class="flex flex-col-reverse sm:flex-row items-center justify-between gap-8">
+      <div class="flex-1 space-y-4">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-medium bg-teal-950/60 text-teal-300 border border-teal-800/60">
+          <span class="w-2 h-2 rounded-full bg-teal-400 animate-pulse"></span>
+          Estudiante UTN FRM · Próxima a graduarse (6 meses)
+        </div>
+        <h1 class="text-4xl sm:text-5xl font-extrabold tracking-tight text-white">
+          Desarrolladora <span class="text-teal-400">Full Stack</span> & Gestión Digital
+        </h1>
+        <p class="text-slate-400 text-base sm:text-lg max-w-2xl leading-relaxed">
+          Combino desarrollo de software en <strong class="text-slate-200">Java, JavaScript y Python</strong> con bases de datos relacionales (<strong class="text-slate-200">MySQL, PostgreSQL, SQLite</strong>) y NoSQL. Más de dos años de experiencia en administración de comercio electrónico y flujos de trabajo asistidos con IA.
+        </p>
+        <div class="flex flex-wrap items-center justify-center sm:justify-start gap-4 pt-3">
+          <a href="#proyectos" class="bg-teal-500 hover:bg-teal-600 text-slate-950 font-semibold px-5 py-2.5 rounded-lg shadow-lg shadow-teal-500/20 transition flex items-center gap-2">
+            Ver Proyectos <i class="fa-solid fa-arrow-down text-sm"></i>
+          </a>
+          <a href="mailto:amandapagano05@gmail.com" class="border border-slate-700 hover:border-slate-500 text-slate-200 px-5 py-2.5 rounded-lg transition flex items-center gap-2">
+            <i class="fa-regular fa-envelope"></i> Contactar
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Sección de Proyectos -->
+  <section id="proyectos" class="py-16 bg-slate-900/50 border-y border-slate-800/80">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="mb-12">
+        <h2 class="text-2xl sm:text-3xl font-bold text-white flex items-center gap-3">
+          <i class="fa-solid fa-laptop-code text-teal-400"></i> Proyectos y Prototipos
+        </h2>
+        <p class="text-slate-400 text-sm mt-1">Aplicaciones funcionales, integradores universitarios y prototipos interactivos.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+        <!-- Proyecto: LUTI -->
+        <div class="bg-slate-900 border border-slate-800 rounded-xl p-6 hover:border-teal-500/50 transition duration-300 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-3">
+              <span class="text-xs font-semibold px-2.5 py-1 rounded bg-teal-950 text-teal-300 border border-teal-800/50">En Desarrollo / Demo</span>
+              <a href="https://luti-demo.vercel.app/" target="_blank" class="text-slate-400 hover:text-teal-400 text-sm flex items-center gap-1 font-medium transition">
+                Visitar demo <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+              </a>
+            </div>
+            <h3 class="text-xl font-bold text-white mb-2">Luti – Plataforma Operativa</h3>
+            <p class="text-slate-400 text-sm mb-4 leading-relaxed">
+              Solución para automatizar el registro de jornadas de trabajo, control de asistencia y carga de comprobantes para personal en campo.
+            </p>
+          </div>
+          <div>
+            <div class="flex flex-wrap gap-2 pt-2 border-t border-slate-800 text-xs text-slate-300">
+              <span class="bg-slate-800 px-2 py-1 rounded">JavaScript</span>
+              <span class="bg-slate-800 px-2 py-1 rounded">Frontend React / Web</span>
+              <span class="bg-slate-800 px-2 py-1 rounded">Vercel</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Proyecto: Gestión Odontológica -->
+        <div class="bg-slate-900 border border-slate-800 rounded-xl p-6 hover:border-teal-500/50 transition duration-300 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-3">
+              <span class="text-xs font-semibold px-2.5 py-1 rounded bg-blue-950 text-blue-300 border border-blue-800/50">Proyecto Integrador UTN</span>
+              <span class="text-xs text-slate-500 font-mono">Backend & DB</span>
+            </div>
+            <h3 class="text-xl font-bold text-white mb-2">Sistema de Gestión de Turnos</h3>
+            <p class="text-slate-400 text-sm mb-4 leading-relaxed">
+              Software para administración de turnos clínicos, gestión de pacientes e historias odontológicas. Diseño relacional con integridad y arquitectura modular.
+            </p>
+          </div>
+          <div>
+            <div class="flex flex-wrap gap-2 pt-2 border-t border-slate-800 text-xs text-slate-300">
+              <span class="bg-slate-800 px-2 py-1 rounded">Java (POO)</span>
+              <span class="bg-slate-800 px-2 py-1 rounded">MySQL / SQLite</span>
+              <span class="bg-slate-800 px-2 py-1 rounded">CRUD</span>
+              <span class="bg-slate-800 px-2 py-1 rounded">Relevamiento de Requisitos</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Proyecto: Editorial Codex -->
+        <div class="bg-slate-900 border border-slate-800 rounded-xl p-6 hover:border-teal-500/50 transition duration-300 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-3">
+              <span class="text-xs font-semibold px-2.5 py-1 rounded bg-slate-800 text-slate-300">Frontend / UI</span>
+              <a href="https://alucrecia-pagano.github.io/Prototipos-Frontend/editorial-codex/" target="_blank" class="text-slate-400 hover:text-teal-400 text-sm flex items-center gap-1 font-medium transition">
+                Ver en vivo <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+              </a>
+            </div>
+            <h3 class="text-xl font-bold text-white mb-2">Editorial Codex</h3>
+            <p class="text-slate-400 text-sm mb-4 leading-relaxed">
+              Prototipo responsivo de catálogo editorial y exhibición bibliográfica. Estructuración semántica en HTML5 y estilos modernos con CSS3 adaptativo.
+            </p>
+          </div>
+          <div>
+            <div class="flex flex-wrap gap-2 pt-2 border-t border-slate-800 text-xs text-slate-300">
+              <span class="bg-slate-800 px-2 py-1 rounded">HTML5</span>
+              <span class="bg-slate-800 px-2 py-1 rounded">CSS3</span>
+              <span class="bg-slate-800 px-2 py-1 rounded">GitHub Pages</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Proyecto: FoodStore Demo -->
+        <div class="bg-slate-900 border border-slate-800 rounded-xl p-6 hover:border-teal-500/50 transition duration-300 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-3">
+              <span class="text-xs font-semibold px-2.5 py-1 rounded bg-slate-800 text-slate-300">Frontend / E-commerce</span>
+              <a href="https://alucrecia-pagano.github.io/Prototipos-Frontend/foodstore-demo/" target="_blank" class="text-slate-400 hover:text-teal-400 text-sm flex items-center gap-1 font-medium transition">
+                Ver en vivo <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+              </a>
+            </div>
+            <h3 class="text-xl font-bold text-white mb-2">FoodStore Demo</h3>
+            <p class="text-slate-400 text-sm mb-4 leading-relaxed">
+              Interfaz web interactiva para tienda de productos gastronómicos. Implementación de catálogo visual, carrito y navegación dinámica optimizada para móviles.
+            </p>
+          </div>
+          <div>
+            <div class="flex flex-wrap gap-2 pt-2 border-t border-slate-800 text-xs text-slate-300">
+              <span class="bg-slate-800 px-2 py-1 rounded">JavaScript</span>
+              <span class="bg-slate-800 px-2 py-1 rounded">HTML/CSS</span>
+              <span class="bg-slate-800 px-2 py-1 rounded">DOM Manipulation</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Stack y Tecnologías -->
+  <section id="stack" class="py-16 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="mb-10 text-center sm:text-left">
+      <h2 class="text-2xl sm:text-3xl font-bold text-white flex items-center justify-center sm:justify-start gap-3">
+        <i class="fa-solid fa-layer-group text-teal-400"></i> Stack Tecnológico
+      </h2>
+      <p class="text-slate-400 text-sm mt-1">Herramientas que empleo en desarrollo, persistencia y optimización agéntica.</p>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      
+      <div class="bg-slate-900/80 p-5 rounded-lg border border-slate-800">
+        <h4 class="text-teal-400 font-semibold mb-3 text-sm uppercase tracking-wider flex items-center gap-2">
+          <i class="fa-solid fa-code"></i> Lenguajes
+        </h4>
+        <ul class="space-y-1.5 text-sm text-slate-300">
+          <li>Java (POO, UTN)</li>
+          <li>JavaScript</li>
+          <li>TypeScript</li>
+          <li>Python</li>
+          <li>HTML5 & CSS3</li>
+        </ul>
+      </div>
+
+      <div class="bg-slate-900/80 p-5 rounded-lg border border-slate-800">
+        <h4 class="text-teal-400 font-semibold mb-3 text-sm uppercase tracking-wider flex items-center gap-2">
+          <i class="fa-solid fa-database"></i> Bases de Datos
+        </h4>
+        <ul class="space-y-1.5 text-sm text-slate-300">
+          <li>MySQL</li>
+          <li>PostgreSQL</li>
+          <li>SQLite</li>
+          <li>MongoDB (NoSQL)</li>
+          <li>Modelado relacional</li>
+        </ul>
+      </div>
+
+      <div class="bg-slate-900/80 p-5 rounded-lg border border-slate-800">
+        <h4 class="text-teal-400 font-semibold mb-3 text-sm uppercase tracking-wider flex items-center gap-2">
+          <i class="fa-solid fa-robot"></i> IA & Productividad
+        </h4>
+        <ul class="space-y-1.5 text-sm text-slate-300">
+          <li>GitHub Copilot</li>
+          <li>Claude Code / Claude</li>
+          <li>Flujos Agénticos (CoderCup)</li>
+          <li>OpenCode & Antigravity</li>
+          <li>Debugging asistido</li>
+        </ul>
+      </div>
+
+      <div class="bg-slate-900/80 p-5 rounded-lg border border-slate-800">
+        <h4 class="text-teal-400 font-semibold mb-3 text-sm uppercase tracking-wider flex items-center gap-2">
+          <i class="fa-solid fa-briefcase"></i> Gestión & Ops
+        </h4>
+        <ul class="space-y-1.5 text-sm text-slate-300">
+          <li>Git & GitHub</li>
+          <li>Tiendanube (Administración)</li>
+          <li>IntelliJ IDEA & VS Code</li>
+          <li>Control de catálogo y stock</li>
+          <li>Metodologías Ágiles</li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer / Contacto -->
+  <footer id="contacto" class="border-t border-slate-800 py-12 bg-slate-950 text-center">
+    <div class="max-w-4xl mx-auto px-4 space-y-4">
+      <h3 class="text-2xl font-bold text-white">¿Hablamos de una oportunidad técnica?</h3>
+      <p class="text-slate-400 text-sm max-w-lg mx-auto">
+        Buscando activamente sumarme a equipos de desarrollo, soporte funcional o implementación de software en Mendoza o remoto.
+      </p>
+      <div class="flex items-center justify-center gap-4 pt-2">
+        <a href="mailto:amandapagano05@gmail.com" class="bg-teal-500 hover:bg-teal-600 text-slate-950 font-semibold px-5 py-2 rounded-lg text-sm transition">
+          <i class="fa-regular fa-envelope mr-1"></i> amandapagano05@gmail.com
+        </a>
+        <a href="https://github.com/ALucrecia-Pagano" target="_blank" class="border border-slate-700 hover:border-slate-500 text-slate-200 px-4 py-2 rounded-lg text-sm transition">
+          <i class="fa-brands fa-github mr-1"></i> GitHub
+        </a>
+      </div>
+      <p class="text-xs text-slate-600 pt-6">© 2026 Amanda Pagano · Mendoza, Argentina</p>
+    </div>
+  </footer>
+
+</body>
+</html>
+"""
+
+with open("index.html", "w", encoding="utf-8") as f:
+    f.write(html_code)
+
+print("Archivo index.html creado con éxito.")
