@@ -4,6 +4,9 @@ import React, { useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 
+// Casting para evitar conflicto de tipos entre React MouseEvent y Framer Motion
+const MotionDiv = motion.div as any;
+
 interface BentoCardProps extends React.HTMLAttributes<HTMLDivElement> {
   children: React.ReactNode;
   className?: string;
@@ -38,7 +41,7 @@ export function BentoCard({
   };
 
   return (
-    <motion.div
+    <MotionDiv
       ref={cardRef}
       onMouseMove={handleMouseMove}
       onMouseEnter={() => setIsHovered(true)}
@@ -74,7 +77,7 @@ export function BentoCard({
 
       {/* Internal Content Container */}
       <div className="relative z-10 h-full w-full">{children}</div>
-    </motion.div>
+    </MotionDiv>
   );
 }
 

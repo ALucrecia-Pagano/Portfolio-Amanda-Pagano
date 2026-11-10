@@ -2,8 +2,11 @@
 
 import React, { useRef, useState } from "react";
 import { Project } from "@/data/portfolio";
-import { ExternalLink, Github, Sparkles, CheckCircle2, Layers } from "lucide-react";
+import { ExternalLink, Github } from "lucide-react";
 import { motion } from "framer-motion";
+
+// Casting para evitar conflicto de tipos entre React MouseEvent y Framer Motion
+const MotionDiv = motion.div as any;
 
 interface ProjectCardProps {
   project: Project;
@@ -27,7 +30,7 @@ export function ProjectCard({ project, featured = false }: ProjectCardProps) {
   const isBackendOnly = project.statusType === "backend-completed";
 
   return (
-    <motion.div
+    <MotionDiv
       ref={cardRef}
       onMouseMove={handleMouseMove}
       onMouseEnter={() => setIsHovered(true)}
@@ -141,7 +144,7 @@ export function ProjectCard({ project, featured = false }: ProjectCardProps) {
           )}
         </div>
       </div>
-    </motion.div>
+    </MotionDiv>
   );
 }
 

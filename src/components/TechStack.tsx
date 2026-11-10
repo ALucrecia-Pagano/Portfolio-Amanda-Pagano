@@ -7,12 +7,12 @@ import {
   Database,
   Sparkles,
   GitBranch,
-  Terminal,
-  Cpu,
   Layers,
-  CheckCircle,
 } from "lucide-react";
 import { motion } from "framer-motion";
+
+// Casting para evitar conflicto de tipos entre React MouseEvent y Framer Motion
+const MotionDiv = motion.div as any;
 
 export function TechStack() {
   const { techStack } = portfolioData;
@@ -115,7 +115,7 @@ function TechCategoryCard({ category, index, Icon }: TechCategoryCardProps) {
   };
 
   return (
-    <motion.div
+    <MotionDiv
       ref={cardRef}
       onMouseMove={handleMouseMove}
       onMouseEnter={() => setIsHovered(true)}
@@ -172,7 +172,7 @@ function TechCategoryCard({ category, index, Icon }: TechCategoryCardProps) {
           ))}
         </div>
       </div>
-    </motion.div>
+    </MotionDiv>
   );
 }
 

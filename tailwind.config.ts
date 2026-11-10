@@ -9,6 +9,10 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        sans: ["var(--font-inter)", "sans-serif"],
+        mono: ["var(--font-mono)", "monospace"],
+      },
       colors: {
         background: {
           DEFAULT: "#0a0a0c",
@@ -49,6 +53,13 @@ const config: Config = {
         "purple-glow": "0 0 35px -5px rgba(139, 92, 246, 0.08)",
         "inner-glow": "inset 0 1px 1px 0 rgba(255, 255, 255, 0.08)",
         subtle: "0 4px 20px -2px rgba(0, 0, 0, 0.5)",
+      },
+      backgroundImage: {
+        "grid-pattern":
+          "radial-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px)",
+      },
+      backgroundSize: {
+        "grid-pattern": "24px 24px",
       },
     },
   },
