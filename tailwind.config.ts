@@ -26,10 +26,10 @@ const config: Config = {
           glow: "rgba(255, 255, 255, 0.16)",
         },
         accent: {
-          DEFAULT: "#10b981",
-          light: "#34d399",
-          dark: "#059669",
-          glow: "rgba(16, 185, 129, 0.18)",
+          DEFAULT: "#8b5cf6",
+          light: "#a78bfa",
+          dark: "#6d28d9",
+          glow: "rgba(139, 92, 246, 0.18)",
         },
         violet: {
           DEFAULT: "#8b5cf6",
@@ -49,7 +49,7 @@ const config: Config = {
         "4xl": "2rem",
       },
       boxShadow: {
-        "bento-glow": "0 0 35px -5px rgba(16, 185, 129, 0.08)",
+        "bento-glow": "0 0 35px -5px rgba(139, 92, 246, 0.08)",
         "purple-glow": "0 0 35px -5px rgba(139, 92, 246, 0.08)",
         "inner-glow": "inset 0 1px 1px 0 rgba(255, 255, 255, 0.08)",
         subtle: "0 4px 20px -2px rgba(0, 0, 0, 0.5)",

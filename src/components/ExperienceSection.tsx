@@ -9,12 +9,12 @@ export function ExperienceSection() {
   const { profile } = portfolioData;
 
   return (
-    <section id="sobre-mi" className="py-20 relative">
+    <section id="trayectoria" className="py-20 relative">
       <div className="max-w-5xl mx-auto px-4 sm:px-6">
         
         {/* Section Header */}
         <div className="mb-12 space-y-2">
-          <div className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-emerald-400">
+          <div className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-violet-400">
             <Briefcase className="w-3.5 h-3.5" />
             <span>Trayectoria &amp; Formación</span>
           </div>
@@ -44,7 +44,7 @@ export function ExperienceSection() {
             
             <div className="space-y-4">
               <div className="flex items-center justify-between">
-                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/25">
+                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-violet-500/10 text-violet-400 border border-violet-400/25">
                   <Briefcase className="w-3.5 h-3.5" />
                   Experiencia Comercial
                 </span>
@@ -57,7 +57,7 @@ export function ExperienceSection() {
                 <h3 className="text-xl font-bold text-white">
                   {profile.experience[0]?.company}
                 </h3>
-                <p className="text-sm font-medium text-emerald-400/90 mt-0.5">
+                <p className="text-sm font-medium text-violet-400/90 mt-0.5">
                   {profile.experience[0]?.role}
                 </p>
               </div>
@@ -69,7 +69,7 @@ export function ExperienceSection() {
               <div className="space-y-2 pt-2">
                 {profile.experience[0]?.highlights.map((h, i) => (
                   <div key={i} className="flex items-start gap-2 text-xs text-zinc-300">
-                    <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400 shrink-0 mt-0.5" />
+                    <CheckCircle2 className="w-3.5 h-3.5 text-violet-400 shrink-0 mt-0.5" />
                     <span>{h}</span>
                   </div>
                 ))}

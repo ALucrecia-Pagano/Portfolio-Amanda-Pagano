@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from "next";
+import { Sidebar, MobileNav } from "@/components/Sidebar";
 import "./globals.css";
 
 export const viewport: Viewport = {
@@ -73,8 +74,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es" className="scroll-smooth dark">
-      <body className="bg-[#0a0a0c] font-sans text-zinc-100 antialiased selection:bg-emerald-500/30 selection:text-white">
-        {children}
+      <body className="bg-[#0a0a0a] font-sans text-white antialiased selection:bg-white/15 selection:text-white">
+        <MobileNav />
+        <Sidebar />
+        <main className="min-h-screen w-full bg-[#0a0a0a] px-6 py-24 md:ml-[15%] md:w-[85%] md:px-12 lg:px-24 lg:py-28">
+          {children}
+        </main>
       </body>
     </html>
   );

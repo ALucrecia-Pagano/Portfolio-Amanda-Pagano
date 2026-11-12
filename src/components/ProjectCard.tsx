@@ -67,12 +67,12 @@ export function ProjectCard({ project, featured = false }: ProjectCardProps) {
             className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium border ${
               isBackendOnly
                 ? "bg-purple-950/40 border-purple-500/30 text-purple-300"
-                : "bg-emerald-950/40 border-emerald-500/30 text-emerald-300"
+                : "bg-violet-950/40 border-violet-400/30 text-violet-300"
             }`}
           >
             <span
               className={`w-1.5 h-1.5 rounded-full ${
-                isBackendOnly ? "bg-purple-400" : "bg-emerald-400"
+                isBackendOnly ? "bg-purple-400" : "bg-violet-400"
               }`}
             />
             {project.status}
@@ -85,10 +85,10 @@ export function ProjectCard({ project, featured = false }: ProjectCardProps) {
 
         {/* Title & Subtitle */}
         <div>
-          <h3 className="text-xl sm:text-2xl font-bold text-white group-hover:text-emerald-300 transition-colors duration-200">
+          <h3 className="text-xl sm:text-2xl font-bold text-white group-hover:text-violet-300 transition-colors duration-200">
             {project.title}
           </h3>
-          <p className="text-xs sm:text-sm font-medium text-emerald-400/90 mt-1">
+          <p className="text-xs sm:text-sm font-medium text-violet-400/90 mt-1">
             {project.subtitle}
           </p>
         </div>
@@ -120,7 +120,7 @@ export function ProjectCard({ project, featured = false }: ProjectCardProps) {
               href={project.links.live}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl text-xs font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/30 hover:bg-emerald-500/20 hover:border-emerald-500/50 transition-all duration-200"
+              className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl text-xs font-semibold bg-violet-500/10 text-violet-400 border border-violet-400/30 hover:bg-violet-500/20 hover:border-violet-400/50 transition-all duration-200"
             >
               <span>Ver demo</span>
               <ExternalLink className="w-3.5 h-3.5" />

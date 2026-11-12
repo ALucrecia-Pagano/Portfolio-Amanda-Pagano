@@ -38,7 +38,7 @@ export function ProjectsSection() {
         {/* Section Header */}
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-10">
           <div className="space-y-2">
-            <div className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-emerald-400">
+            <div className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-violet-400">
               <FolderGit2 className="w-3.5 h-3.5" />
               <span>Trabajo Destacado</span>
             </div>

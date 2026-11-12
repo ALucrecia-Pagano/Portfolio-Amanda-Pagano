@@ -10,14 +10,14 @@ const MotionDiv = motion.div as any;
 interface BentoCardProps extends React.HTMLAttributes<HTMLDivElement> {
   children: React.ReactNode;
   className?: string;
-  glowColor?: "emerald" | "purple" | "neutral";
+  glowColor?: "violet" | "purple" | "neutral";
   hoverEffect?: boolean;
 }
 
 export function BentoCard({
   children,
   className,
-  glowColor = "emerald",
+  glowColor = "violet",
   hoverEffect = true,
   ...props
 }: BentoCardProps) {
@@ -35,7 +35,7 @@ export function BentoCard({
   };
 
   const glowStyles = {
-    emerald: "rgba(16, 185, 129, 0.12)",
+    violet: "rgba(139, 92, 246, 0.12)",
     purple: "rgba(139, 92, 246, 0.12)",
     neutral: "rgba(255, 255, 255, 0.08)",
   };

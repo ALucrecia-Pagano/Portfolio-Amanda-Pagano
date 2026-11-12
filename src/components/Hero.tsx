@@ -1,127 +1,69 @@
 "use client";
 
 import React from "react";
-import { portfolioData } from "@/data/portfolio";
-import { ArrowDown, Mail, MapPin, Sparkles, Terminal, Code2 } from "lucide-react";
+import Image from "next/image";
 import { motion } from "framer-motion";
 
+const HERO_IMAGE = "/foto-perfil.jpg";
+
 export function Hero() {
-  const { profile, contact } = portfolioData;
-
   return (
-    <section className="relative pt-28 pb-16 md:pt-36 md:pb-28 overflow-hidden">
-      {/* Luces de fondo ambientales / Ambient radial glows */}
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute left-1/2 top-10 -translate-x-1/2 -translate-y-1/2 w-[650px] h-[380px] rounded-full bg-emerald-500/12 blur-[130px] opacity-75"
-      />
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute -right-16 top-40 w-[350px] h-[280px] rounded-full bg-purple-500/10 blur-[120px] opacity-60"
-      />
+    <section className="relative grid grid-cols-1 items-center gap-14 lg:grid-cols-12 lg:gap-8">
+      {/* Lado izquierdo — Texto */}
+      <div className="flex flex-col items-start lg:col-span-6">
+        <motion.span
+          initial={{ opacity: 0, y: 12 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="text-xs font-medium uppercase tracking-[0.42em] text-[#a1a1aa]"
+        >
+          I Am Amanda Pagano —
+        </motion.span>
 
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 relative z-10">
-        <div className="flex flex-col items-start gap-6 max-w-4xl">
-          
-          {/* Badge con animación de pulso */}
-          <motion.div
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.45 }}
-            className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-[#111116] border border-emerald-500/30 shadow-lg shadow-black/40 backdrop-blur-md"
-          >
-            <span className="relative flex h-2.5 w-2.5">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
-              <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500" />
-            </span>
-            <span className="text-xs font-semibold text-emerald-300 tracking-wide">
-              Estudiante avanzada UTN · Graduación en 6 meses
-            </span>
-          </motion.div>
+        <motion.h1
+          initial={{ opacity: 0, y: 22 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.1 }}
+          className="mt-6 text-6xl font-bold leading-[0.95] tracking-tight text-white sm:text-7xl xl:text-8xl"
+        >
+          Full Stack
+          <br />
+          Developer
+        </motion.h1>
 
-          {/* Titular contundente */}
-          <motion.div
-            initial={{ opacity: 0, y: 22 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.1 }}
-            className="space-y-3"
-          >
-            <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-white leading-[1.08]">
-              Desarrolladora{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-teal-300 to-emerald-200">
-                Full Stack
-              </span>
-              <br />
-              <span className="text-zinc-400 font-normal">
-                &amp; Gestión Operativa
-              </span>
-            </h1>
-          </motion.div>
-
-          {/* Descripción / Bio */}
-          <motion.p
-            initial={{ opacity: 0, y: 22 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            className="text-base sm:text-lg text-zinc-400 leading-relaxed max-w-2xl font-normal"
-          >
-            {profile.bio.short}
-          </motion.p>
-
-          {/* Indicadores de estado y contexto */}
-          <motion.div
-            initial={{ opacity: 0, y: 18 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.25 }}
-            className="flex flex-wrap items-center gap-4 text-xs text-zinc-400"
-          >
-            <div className="flex items-center gap-1.5">
-              <MapPin className="w-3.5 h-3.5 text-zinc-500" />
-              <span>{profile.location}</span>
-            </div>
-            <span className="text-zinc-700">•</span>
-            <div className="flex items-center gap-1.5 text-zinc-300">
-              <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
-              <span>{contact.availability}</span>
-            </div>
-          </motion.div>
-
-          {/* CTAs con botones redondeados */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.3 }}
-            className="flex flex-wrap items-center gap-3.5 pt-2 w-full sm:w-auto"
-          >
-            <a
-              href="#proyectos"
-              className="group inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full bg-emerald-500 text-zinc-950 text-sm font-semibold shadow-lg shadow-emerald-500/20 hover:bg-emerald-400 hover:shadow-emerald-500/35 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200"
-            >
-              <span>Ver Proyectos</span>
-              <ArrowDown className="w-4 h-4 transition-transform group-hover:translate-y-0.5" />
-            </a>
-
-            <a
-              href={`mailto:${contact.email}`}
-              className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full bg-[#111116] border border-white/[0.08] text-zinc-200 text-sm font-medium hover:border-white/[0.2] hover:bg-[#16161e] hover:text-white transition-all duration-200"
-            >
-              <Mail className="w-4 h-4 text-zinc-400" />
-              <span>Contactar</span>
-            </a>
-
-            {/* Micro-indicadores de stack */}
-            <div className="hidden lg:flex items-center gap-2 ml-4">
-              <span className="inline-flex items-center gap-1 px-3 py-1 rounded-full text-xs font-mono bg-white/[0.02] border border-white/[0.06] text-zinc-400">
-                <Code2 className="w-3 h-3 text-emerald-400" /> Java · TypeScript
-              </span>
-              <span className="inline-flex items-center gap-1 px-3 py-1 rounded-full text-xs font-mono bg-white/[0.02] border border-white/[0.06] text-zinc-400">
-                <Sparkles className="w-3 h-3 text-purple-400" /> IA Agéntica
-              </span>
-            </div>
-          </motion.div>
-
-        </div>
+        <motion.a
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.25 }}
+          href="#contacto"
+          className="group mt-12 inline-flex items-center gap-3 border border-white/40 px-8 py-4 text-sm font-medium uppercase tracking-[0.2em] text-white transition-colors duration-300 ease-out hover:bg-white hover:text-[#0a0a0a]"
+        >
+          Contact Me
+          <span
+            aria-hidden="true"
+            className="inline-block h-px w-6 bg-white transition-all duration-300 ease-out group-hover:w-9 group-hover:bg-[#0a0a0a]"
+          />
+        </motion.a>
       </div>
+
+      {/* Lado derecho — Imagen */}
+      <motion.div
+        initial={{ opacity: 0, y: 28 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7, delay: 0.15 }}
+        className="group relative lg:col-span-6"
+      >
+        <div className="relative aspect-[3/4] w-full overflow-hidden rounded-[1.5rem] rounded-tr-[7rem] bg-[#111111]">
+          <Image
+            src={HERO_IMAGE}
+            alt="Amanda Pagano programando con múltiples monitores"
+            fill
+            priority
+            sizes="(max-width: 1024px) 100vw, 40vw"
+            className="object-cover grayscale transition-[filter,transform] duration-[900ms] ease-out group-hover:scale-[1.03] group-hover:grayscale-0"
+          />
+        </div>
+      </motion.div>
     </section>
   );
 }

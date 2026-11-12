@@ -22,8 +22,8 @@ export function TechStack() {
       key: "languages",
       data: techStack.languages,
       icon: Code2,
-      accentColor: "emerald",
-      badgeColor: "text-emerald-400 bg-emerald-500/10 border-emerald-500/20",
+      accentColor: "violet",
+      badgeColor: "text-violet-400 bg-violet-500/10 border-violet-400/20",
     },
     {
       key: "databases",
@@ -43,8 +43,8 @@ export function TechStack() {
       key: "management",
       data: techStack.managementAndOps,
       icon: GitBranch,
-      accentColor: "teal",
-      badgeColor: "text-teal-400 bg-teal-500/10 border-teal-500/20",
+      accentColor: "violet",
+      badgeColor: "text-violet-400 bg-violet-500/10 border-violet-400/20",
     },
   ];
 
@@ -54,7 +54,7 @@ export function TechStack() {
         
         {/* Section Header */}
         <div className="mb-12 space-y-2">
-          <div className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-emerald-400">
+          <div className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-violet-400">
             <Layers className="w-3.5 h-3.5" />
             <span>Capacidades Técnicas</span>
           </div>
@@ -138,7 +138,7 @@ function TechCategoryCard({ category, index, Icon }: TechCategoryCardProps) {
           aria-hidden="true"
           className="pointer-events-none absolute -inset-px transition-opacity duration-300"
           style={{
-            background: `radial-gradient(280px circle at ${mousePos.x}px ${mousePos.y}px, rgba(16, 185, 129, 0.09), transparent 75%)`,
+            background: `radial-gradient(280px circle at ${mousePos.x}px ${mousePos.y}px, rgba(139, 92, 246, 0.09), transparent 75%)`,
           }}
         />
       )}
@@ -146,11 +146,11 @@ function TechCategoryCard({ category, index, Icon }: TechCategoryCardProps) {
       <div className="relative z-10 space-y-4">
         {/* Header Icon + Title */}
         <div className="flex items-center gap-3">
-          <div className="flex h-10 w-10 items-center justify-center rounded-2xl bg-white/[0.04] border border-white/[0.08] text-zinc-200 group-hover:border-emerald-500/40 group-hover:text-emerald-400 transition-colors">
+          <div className="flex h-10 w-10 items-center justify-center rounded-2xl bg-white/[0.04] border border-white/[0.08] text-zinc-200 group-hover:border-violet-400/40 group-hover:text-violet-400 transition-colors">
             <Icon className="w-5 h-5" />
           </div>
           <div>
-            <h3 className="text-base font-bold text-white group-hover:text-emerald-300 transition-colors">
+            <h3 className="text-base font-bold text-white group-hover:text-violet-300 transition-colors">
               {category.data.title}
             </h3>
           </div>

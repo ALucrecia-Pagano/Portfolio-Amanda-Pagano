@@ -65,7 +65,7 @@ export interface TechStack {
 }
 
 export interface SocialLink {
-  platform: "email" | "github" | "linkedin";
+  platform: "email" | "github" | "whatsapp";
   label: string;
   url: string;
   username: string;
@@ -75,7 +75,7 @@ export interface SocialLink {
 export interface ContactInfo {
   email: string;
   availability: string;
-  preferredContact: "email" | "linkedin";
+  preferredContact: "email" | "whatsapp";
   socialLinks: readonly SocialLink[];
 }
 
@@ -250,10 +250,11 @@ export const portfolioData: PortfolioData = {
         isPrimary: true,
       },
       {
-        platform: "linkedin",
-        label: "LinkedIn",
-        url: "https://linkedin.com/in/amanda-pagano",
-        username: "Amanda Pagano",
+        platform: "whatsapp",
+        label: "WhatsApp",
+        // TODO: reemplazar por el número completo, ej. https://wa.me/5492612345678
+        url: "https://wa.me/",
+        username: "",
         isPrimary: false,
       },
     ],
