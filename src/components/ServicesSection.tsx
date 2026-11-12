@@ -21,49 +21,49 @@ interface Service {
 const SERVICES: Service[] = [
   {
     icon: Code2,
-    title: "Web Development",
+    title: "Desarrollo Web",
     description:
       "Interfaces modernas y responsivas con Next.js, TypeScript y Tailwind CSS, cuidadas al detalle.",
   },
   {
     icon: Database,
-    title: "Database Architecture",
+    title: "Arquitectura de Bases de Datos",
     description:
       "Modelado relacional en PostgreSQL, normalización y consultas SQL eficientes para datos confiables.",
   },
   {
     icon: Workflow,
-    title: "Operational Systems",
+    title: "Sistemas de Gestión",
     description:
-      "Plataformas de gestión que ordenan inventario, procesos y flujos comerciales reales.",
+      "Plataformas que ordenan inventario, procesos y flujos comerciales reales.",
   },
   {
     icon: Server,
-    title: "Backend Engineering",
+    title: "Ingeniería Backend",
     description:
       "APIs y servicios robustos en Java con arquitecturas limpias, mantenibles y escalables.",
   },
   {
     icon: Plug,
-    title: "API Integration",
+    title: "Integración de APIs",
     description:
       "Conexión de servicios externos y automatizaciones que eliminan trabajo manual repetitivo.",
   },
   {
     icon: Cloud,
-    title: "Cloud & Deployment",
+    title: "Cloud y Despliegue",
     description:
       "Despliegue y operación en la nube sobre AWS, con foco en performance y disponibilidad.",
   },
 ];
 
-const gridVariants = {
+const listVariants = {
   hidden: {},
   visible: { transition: { staggerChildren: 0.08 } },
 };
 
-const cardVariants = {
-  hidden: { opacity: 0, y: 28 },
+const itemVariants = {
+  hidden: { opacity: 0, y: 20 },
   visible: {
     opacity: 1,
     y: 0,
@@ -81,47 +81,54 @@ export function ServicesSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.5 }}
-          className="text-xs font-medium uppercase tracking-[0.42em] text-[#a1a1aa]"
+          className="font-sans text-[10px] font-medium uppercase tracking-[0.4em] text-gold"
         >
-          What I am Expert In
+          En qué soy experta
         </motion.span>
         <motion.h2
           initial={{ opacity: 0, y: 18 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.55, delay: 0.1 }}
-          className="mt-5 text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-5xl"
+          className="mt-5 font-serif text-3xl font-light tracking-tight text-white sm:text-4xl lg:text-5xl"
         >
-          My Services
+          Mis Servicios
         </motion.h2>
       </div>
 
-      {/* Grilla Bento / Glassmorphism — 3 columnas x 2 filas */}
+      {/* Lista plana separada por líneas doradas */}
       <motion.ul
-        variants={gridVariants}
+        variants={listVariants}
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, margin: "-80px" }}
-        className="mt-16 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3"
+        className="mt-14 border-t border-gold/30"
       >
         {SERVICES.map(({ icon: Icon, title, description }) => (
-          <motion.li key={title} variants={cardVariants}>
+          <motion.li
+            key={title}
+            variants={itemVariants}
+            className="border-b border-gold/30"
+          >
             <a
               href="#contacto"
-              className="group flex h-full cursor-pointer flex-col gap-6 rounded-3xl bg-[#111111]/80 p-8 ring-1 ring-transparent backdrop-blur-sm transition-all duration-300 ease-out hover:ring-[#333]"
+              className="group grid grid-cols-1 gap-4 py-8 sm:grid-cols-12 sm:items-baseline sm:gap-8"
             >
-              <span className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-white/[0.04] text-white transition-colors duration-300 group-hover:bg-white/[0.08]">
-                <Icon className="h-6 w-6" strokeWidth={1.5} aria-hidden="true" />
+              <span className="sm:col-span-1">
+                <Icon
+                  className="h-5 w-5 text-gold transition-transform duration-300 ease-out group-hover:translate-x-1"
+                  strokeWidth={1.25}
+                  aria-hidden="true"
+                />
               </span>
 
-              <div className="space-y-2">
-                <h3 className="text-lg font-semibold tracking-tight text-white">
-                  {title}
-                </h3>
-                <p className="text-sm leading-relaxed text-[#a1a1aa]">
-                  {description}
-                </p>
-              </div>
+              <h3 className="font-serif text-2xl font-light tracking-tight text-white transition-colors duration-300 group-hover:text-gold sm:col-span-4">
+                {title}
+              </h3>
+
+              <p className="text-sm leading-relaxed text-[#a1a1aa] sm:col-span-7">
+                {description}
+              </p>
             </a>
           </motion.li>
         ))}

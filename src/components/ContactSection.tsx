@@ -14,18 +14,18 @@ export function ContactSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-80px" }}
             transition={{ duration: 0.5 }}
-            className="text-xs font-medium uppercase tracking-[0.42em] text-[#a1a1aa]"
+            className="font-sans text-[10px] font-medium uppercase tracking-[0.4em] text-gold"
           >
-            Get in Touch
+            Ponte en Contacto
           </motion.span>
           <motion.h2
             initial={{ opacity: 0, y: 18 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-80px" }}
             transition={{ duration: 0.55, delay: 0.1 }}
-            className="mt-5 text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-5xl"
+            className="mt-5 font-serif text-3xl font-light tracking-tight text-white sm:text-4xl lg:text-5xl"
           >
-            Let&apos;s Build Something
+            Construyamos algo juntos
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 18 }}
@@ -48,10 +48,14 @@ export function ContactSection() {
           className="flex items-center lg:col-span-6 lg:col-start-7"
         >
           <a
-            href="mailto:amandapagano05@gmail.com"
-            className="inline-flex items-center border border-white/40 px-8 py-4 text-xs font-medium uppercase tracking-widest text-white transition-colors duration-300 ease-out hover:bg-white hover:text-[#0a0a0a]"
+            href="https://mail.google.com/mail/?view=cm&fs=1&to=amandapagano05@gmail.com"
+            className="group inline-flex items-center gap-3 border-b border-gold/40 pb-3 font-sans text-[11px] font-medium uppercase tracking-[0.3em] text-white transition-colors duration-300 ease-out hover:border-gold hover:text-gold focus:border-gold focus:text-gold focus:outline-none"
           >
-            Send Message
+            Enviar mensaje
+            <span
+              aria-hidden="true"
+              className="inline-block h-px w-6 bg-gold transition-all duration-300 ease-out group-hover:w-9"
+            />
           </a>
         </motion.div>
       </div>

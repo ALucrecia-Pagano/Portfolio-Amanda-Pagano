@@ -4,7 +4,7 @@ import React from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 
-const ABOUT_IMAGE = "/foto-perfil.jpg";
+const ABOUT_IMAGE = "/perfil-2.jpg";
 
 const TECH_STACK = [
   "Java",
@@ -38,7 +38,7 @@ export function AboutSection() {
         viewport={{ once: true, margin: "-80px" }}
         className="group relative mx-auto w-full max-w-xs lg:col-span-4 lg:mx-0 lg:max-w-none"
       >
-        <div className="relative aspect-[3/4] w-full overflow-hidden rounded-2xl bg-[#111111]">
+        <div className="relative aspect-[3/4] w-full overflow-hidden bg-[#111111]">
           <Image
             src={ABOUT_IMAGE}
             alt="Amanda Pagano trabajando en desarrollo Full Stack"
@@ -57,9 +57,9 @@ export function AboutSection() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-80px" }}
-          className="text-3xl font-bold leading-tight tracking-tight text-white sm:text-4xl lg:text-5xl"
+          className="font-serif text-3xl font-light leading-tight tracking-tight text-white sm:text-4xl lg:text-5xl"
         >
-          Professional and Dedicated Full Stack Developer
+          Desarrolladora Full Stack profesional y dedicada
         </motion.h2>
 
         <motion.p
@@ -86,16 +86,21 @@ export function AboutSection() {
           viewport={{ once: true, margin: "-80px" }}
           className="mt-12"
         >
-          <span className="text-xs font-medium uppercase tracking-[0.35em] text-[#a1a1aa]">
-            Tech Stack
+          <span className="font-sans text-[10px] font-medium uppercase tracking-[0.4em] text-gold">
+            Tecnologías
           </span>
-          <ul className="mt-5 flex flex-wrap gap-3">
-            {TECH_STACK.map((tech) => (
-              <li
-                key={tech}
-                className="rounded-full border border-white/10 bg-[#111111] px-4 py-2 text-sm font-medium text-white transition-colors duration-300 ease-out hover:border-white/40"
-              >
-                {tech}
+          <ul className="mt-5 flex flex-wrap items-center gap-x-4 gap-y-2">
+            {TECH_STACK.map((tech, index) => (
+              <li key={tech} className="flex items-center gap-4">
+                <span className="font-serif text-lg font-light text-white/80">
+                  {tech}
+                </span>
+                {index < TECH_STACK.length - 1 && (
+                  <span
+                    aria-hidden="true"
+                    className="h-4 w-px bg-gold/30"
+                  />
+                )}
               </li>
             ))}
           </ul>

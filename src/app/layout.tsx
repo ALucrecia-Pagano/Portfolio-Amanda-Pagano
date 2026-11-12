@@ -1,6 +1,21 @@
 import type { Metadata, Viewport } from "next";
+import { Cormorant_Garamond, Inter } from "next/font/google";
 import { Sidebar, MobileNav } from "@/components/Sidebar";
 import "./globals.css";
+
+const serif = Cormorant_Garamond({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600"],
+  style: ["normal", "italic"],
+  variable: "--font-serif",
+  display: "swap",
+});
+
+const sans = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
+  display: "swap",
+});
 
 export const viewport: Viewport = {
   themeColor: "#0a0a0c",
@@ -16,7 +31,7 @@ export const metadata: Metadata = {
     template: "%s | Amanda Pagano",
   },
   description:
-    "Portfolio profesional de Amanda Pagano. Desarrolladora Full Stack especializada en Java, TypeScript, SQL y flujos de trabajo asistidos con IA. Estudiante avanzada UTN FRM con más de 2 años de experiencia en gestión de e-commerce en Romana Deco.",
+    "Portafolio profesional de Amanda Pagano. Desarrolladora Full Stack especializada en Java, TypeScript, SQL y flujos de trabajo asistidos con IA. Estudiante avanzada UTN FRM con más de 2 años de experiencia en gestión de e-commerce en Romana Deco.",
   keywords: [
     "Amanda Pagano",
     "Desarrolladora Full Stack",
@@ -73,8 +88,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="es" className="scroll-smooth dark">
-      <body className="bg-[#0a0a0a] font-sans text-white antialiased selection:bg-white/15 selection:text-white">
+    <html lang="es" className={`scroll-smooth dark ${serif.variable} ${sans.variable}`}>
+      <body className="bg-[#0a0a0a] font-sans text-white antialiased selection:bg-gold/25 selection:text-white">
         <MobileNav />
         <Sidebar />
         <main className="min-h-screen w-full bg-[#0a0a0a] px-6 py-24 md:ml-[15%] md:w-[85%] md:px-12 lg:px-24 lg:py-28">

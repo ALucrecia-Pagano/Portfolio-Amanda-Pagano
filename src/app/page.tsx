@@ -1,5 +1,6 @@
 import { Hero } from "@/components/Hero";
 import { AboutSection } from "@/components/AboutSection";
+import { CoursesSection } from "@/components/CoursesSection";
 import { ServicesSection } from "@/components/ServicesSection";
 import { PortfolioSection } from "@/components/PortfolioSection";
 import { TechStack } from "@/components/TechStack";
@@ -12,6 +13,7 @@ export default function Home() {
     <div className="relative mx-auto max-w-6xl space-y-24 sm:space-y-32">
       <Hero />
       <AboutSection />
+      <CoursesSection />
       <ServicesSection />
       <PortfolioSection />
       <TechStack />

@@ -6,10 +6,10 @@ import { portfolioData } from "@/data/portfolio";
 import { motion } from "framer-motion";
 
 const PROJECT_IMAGES: Record<string, string> = {
-  luti: "/projects/luti.jpg",
-  "gestion-turnos-odontologia": "/projects/gestion-turnos.jpg",
-  "editorial-codex": "/projects/editorial-codex.jpg",
-  "foodstore-demo": "/projects/foodstore.jpg",
+  luti: "/proyectos/luti.png",
+  "gestion-turnos-odontologia": "/proyectos/turnos-odontologia.png",
+  "editorial-codex": "/proyectos/codex.png",
+  "foodstore-demo": "/proyectos/food.png",
 };
 
 const gridVariants = {
@@ -38,18 +38,18 @@ export function PortfolioSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.5 }}
-          className="text-xs font-medium uppercase tracking-[0.42em] text-[#a1a1aa]"
+          className="font-sans text-[10px] font-medium uppercase tracking-[0.4em] text-gold"
         >
-          Selected Work
+          Trabajo seleccionado
         </motion.span>
         <motion.h2
           initial={{ opacity: 0, y: 18 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.55, delay: 0.1 }}
-          className="mt-5 text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-5xl"
+          className="mt-5 font-serif text-3xl font-light tracking-tight text-white sm:text-4xl lg:text-5xl"
         >
-          Portfolio
+          Portafolio
         </motion.h2>
       </div>
 
@@ -70,21 +70,21 @@ export function PortfolioSection() {
             <motion.li key={project.id} variants={cardVariants}>
               <a
                 href={href}
-                target={href.startsWith("http") ? "_blank" : undefined}
-                rel={href.startsWith("http") ? "noopener noreferrer" : undefined}
-                className="group relative block aspect-[4/3] overflow-hidden rounded-2xl bg-[#111111]"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group relative block aspect-[4/3] overflow-hidden bg-[#111111]"
               >
                 <Image
-                  src={PROJECT_IMAGES[project.id] ?? "/projects/placeholder.jpg"}
+                  src={PROJECT_IMAGES[project.id] ?? "/proyectos/placeholder.png"}
                   alt={`${project.title} — ${project.subtitle}`}
                   fill
                   sizes="(max-width: 640px) 100vw, 50vw"
-                  className="object-cover grayscale transition-[filter,transform] duration-[900ms] ease-out group-hover:scale-[1.04] group-hover:grayscale-0"
+                  className="object-contain bg-[#0a0a0a] object-center transition-transform duration-[900ms] ease-out group-hover:scale-[1.04]"
                 />
 
                 {/* Overlay oscuro translúcido */}
                 <div className="absolute inset-0 flex flex-col justify-end bg-black/60 p-7 opacity-0 transition-opacity duration-500 ease-out group-hover:opacity-100">
-                  <h3 className="text-lg font-semibold tracking-tight text-white">
+                  <h3 className="font-serif text-xl font-light tracking-tight text-white">
                     {project.title}
                   </h3>
                   <p className="mt-1.5 text-xs font-medium uppercase tracking-[0.2em] text-white/70">

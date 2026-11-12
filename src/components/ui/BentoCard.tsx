@@ -35,8 +35,8 @@ export function BentoCard({
   };
 
   const glowStyles = {
-    violet: "rgba(139, 92, 246, 0.12)",
-    purple: "rgba(139, 92, 246, 0.12)",
+    violet: "rgba(197, 160, 89, 0.12)",
+    purple: "rgba(197, 160, 89, 0.12)",
     neutral: "rgba(255, 255, 255, 0.08)",
   };
 

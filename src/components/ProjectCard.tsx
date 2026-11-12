@@ -55,7 +55,7 @@ export function ProjectCard({ project, featured = false }: ProjectCardProps) {
           aria-hidden="true"
           className="pointer-events-none absolute -inset-px transition-opacity duration-300"
           style={{
-            background: `radial-gradient(400px circle at ${mousePos.x}px ${mousePos.y}px, rgba(16, 185, 129, 0.12), transparent 75%)`,
+            background: `radial-gradient(400px circle at ${mousePos.x}px ${mousePos.y}px, rgba(197, 160, 89, 0.10), transparent 75%)`,
           }}
         />
       )}
@@ -66,13 +66,13 @@ export function ProjectCard({ project, featured = false }: ProjectCardProps) {
           <span
             className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium border ${
               isBackendOnly
-                ? "bg-purple-950/40 border-purple-500/30 text-purple-300"
-                : "bg-violet-950/40 border-violet-400/30 text-violet-300"
+                ? "border-gold/20 bg-gold/5 text-[#d4b578]"
+                : "border-gold/30 bg-gold/10 text-gold"
             }`}
           >
             <span
               className={`w-1.5 h-1.5 rounded-full ${
-                isBackendOnly ? "bg-purple-400" : "bg-violet-400"
+                isBackendOnly ? "bg-gold/60" : "bg-gold"
               }`}
             />
             {project.status}
@@ -85,10 +85,10 @@ export function ProjectCard({ project, featured = false }: ProjectCardProps) {
 
         {/* Title & Subtitle */}
         <div>
-          <h3 className="text-xl sm:text-2xl font-bold text-white group-hover:text-violet-300 transition-colors duration-200">
+          <h3 className="font-serif text-xl font-light text-white transition-colors duration-200 group-hover:text-gold sm:text-2xl">
             {project.title}
           </h3>
-          <p className="text-xs sm:text-sm font-medium text-violet-400/90 mt-1">
+          <p className="mt-1 text-xs font-medium text-gold/90 sm:text-sm">
             {project.subtitle}
           </p>
         </div>
@@ -120,7 +120,7 @@ export function ProjectCard({ project, featured = false }: ProjectCardProps) {
               href={project.links.live}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl text-xs font-semibold bg-violet-500/10 text-violet-400 border border-violet-400/30 hover:bg-violet-500/20 hover:border-violet-400/50 transition-all duration-200"
+              className="inline-flex items-center gap-1.5 rounded-xl border border-gold/30 bg-gold/10 px-4 py-2 text-xs font-semibold text-gold transition-all duration-200 hover:border-gold/60 hover:bg-gold/15"
             >
               <span>Ver demo</span>
               <ExternalLink className="w-3.5 h-3.5" />

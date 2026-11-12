@@ -38,11 +38,11 @@ export function ProjectsSection() {
         {/* Section Header */}
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-10">
           <div className="space-y-2">
-            <div className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-violet-400">
+            <div className="inline-flex items-center gap-2 font-sans text-[10px] font-medium uppercase tracking-[0.4em] text-gold">
               <FolderGit2 className="w-3.5 h-3.5" />
               <span>Trabajo Destacado</span>
             </div>
-            <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-white">
+            <h2 className="font-serif text-3xl font-light tracking-tight text-white sm:text-4xl">
               Proyectos &amp; Soluciones
             </h2>
             <p className="text-zinc-400 text-sm sm:text-base max-w-xl">

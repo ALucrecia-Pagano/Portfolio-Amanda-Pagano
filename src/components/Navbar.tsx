@@ -24,7 +24,7 @@ export function Navbar() {
           href="#"
           className="group flex items-center gap-2 text-sm font-semibold tracking-tight text-white transition-opacity hover:opacity-90"
         >
-          <span className="flex h-7 w-7 items-center justify-center rounded-xl bg-violet-500/10 border border-violet-400/20 text-violet-400 font-mono text-xs font-bold transition group-hover:border-violet-400/40 group-hover:scale-105">
+          <span className="flex h-7 w-7 items-center justify-center rounded-xl border border-gold/30 bg-gold/10 font-mono text-xs font-bold text-gold transition group-hover:border-gold/60 group-hover:scale-105">
             AP
           </span>
           <span className="text-zinc-100 group-hover:text-white font-medium">
@@ -59,7 +59,7 @@ export function Navbar() {
 
           <a
             href="#contacto"
-            className="group relative inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full text-xs font-semibold text-violet-400 bg-violet-500/10 border border-violet-400/30 hover:bg-violet-500/20 hover:border-violet-400/50 transition-all duration-300 shadow-sm"
+            className="group relative inline-flex items-center gap-1.5 rounded-full border border-gold/30 bg-gold/10 px-4 py-1.5 text-xs font-semibold text-gold transition-all duration-300 hover:border-gold/60 hover:bg-gold/15"
           >
             <span>Contacto</span>
             <ArrowUpRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
@@ -101,7 +101,7 @@ export function Navbar() {
               <a
                 href="#contacto"
                 onClick={() => setIsOpen(false)}
-                className="inline-flex items-center gap-1.5 text-xs font-semibold text-violet-400 bg-violet-500/10 border border-violet-400/30 px-3 py-1.5 rounded-full"
+                className="inline-flex items-center gap-1.5 rounded-full border border-gold/30 bg-gold/10 px-3 py-1.5 text-xs font-semibold text-gold"
               >
                 <Mail className="w-3 h-3" />
                 Hablemos

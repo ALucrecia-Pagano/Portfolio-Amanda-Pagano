@@ -110,7 +110,7 @@ export const portfolioData: PortfolioData = {
       {
         role: "Gestión Operativa de E-Commerce & Administración Digital",
         company: "Romana Deco",
-        period: "2023 - Presente (+2 años)",
+        period: "2022 - Actualidad",
         description:
           "Administración integral de plataforma e-commerce en Tiendanube, control de catálogo, inventario, logística y soporte de procesos comerciales.",
         highlights: [
@@ -252,8 +252,7 @@ export const portfolioData: PortfolioData = {
       {
         platform: "whatsapp",
         label: "WhatsApp",
-        // TODO: reemplazar por el número completo, ej. https://wa.me/5492612345678
-        url: "https://wa.me/",
+        url: "https://wa.me/5492617618692",
         username: "",
         isPrimary: false,
       },

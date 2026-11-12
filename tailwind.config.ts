@@ -10,10 +10,16 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ["var(--font-inter)", "sans-serif"],
+        sans: ["var(--font-inter)", "ui-sans-serif", "system-ui", "sans-serif"],
+        serif: ["var(--font-serif)", "Georgia", "Cambria", "Times New Roman", "serif"],
         mono: ["var(--font-mono)", "monospace"],
       },
       colors: {
+        gold: {
+          DEFAULT: "#C5A059",
+          soft: "rgba(197, 160, 89, 0.30)",
+          faint: "rgba(197, 160, 89, 0.18)",
+        },
         background: {
           DEFAULT: "#0a0a0c",
           secondary: "#111116",
