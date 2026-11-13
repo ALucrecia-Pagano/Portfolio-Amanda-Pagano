@@ -51,9 +51,9 @@ const SERVICES: Service[] = [
   },
   {
     icon: Cloud,
-    title: "Cloud y Despliegue",
+    title: "Despliegue de Aplicaciones",
     description:
-      "Despliegue y operación en la nube sobre AWS, con foco en performance y disponibilidad.",
+      "Despliegue en Vercel, GitHub Pages y servidores VPS con EasyPanel, con foco en que el proyecto quede online, estable y fácil de actualizar.",
   },
 ];
 

@@ -48,7 +48,7 @@ export function ContactSection() {
           className="flex items-center lg:col-span-6 lg:col-start-7"
         >
           <a
-            href="https://mail.google.com/mail/?view=cm&fs=1&to=amandapagano05@gmail.com"
+            href="mailto:amandapagano05@gmail.com"
             className="group inline-flex items-center gap-3 border-b border-gold/40 pb-3 font-sans text-[11px] font-medium uppercase tracking-[0.3em] text-white transition-colors duration-300 ease-out hover:border-gold hover:text-gold focus:border-gold focus:text-gold focus:outline-none"
           >
             Enviar mensaje

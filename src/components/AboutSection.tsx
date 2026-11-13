@@ -1,8 +1,9 @@
 "use client";
 
-import React from "react";
+import React, { useRef } from "react";
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { motion, useInView } from "framer-motion";
+import { cn } from "@/lib/utils";
 
 const ABOUT_IMAGE = "/perfil-2.jpg";
 
@@ -11,7 +12,7 @@ const TECH_STACK = [
   "TypeScript",
   "Next.js",
   "PostgreSQL",
-  "AWS",
+  "Vercel",
 ] as const;
 
 const fadeUp = {
@@ -24,6 +25,9 @@ const fadeUp = {
 };
 
 export function AboutSection() {
+  const imageRef = useRef<HTMLDivElement>(null);
+  const isInView = useInView(imageRef, { amount: 0.5 });
+
   return (
     <section
       id="sobre-mi"
@@ -38,13 +42,19 @@ export function AboutSection() {
         viewport={{ once: true, margin: "-80px" }}
         className="group relative mx-auto w-full max-w-xs lg:col-span-4 lg:mx-0 lg:max-w-none"
       >
-        <div className="relative aspect-[3/4] w-full overflow-hidden bg-[#111111]">
+        <div
+          ref={imageRef}
+          className="relative aspect-[3/4] w-full overflow-hidden bg-[#111111]"
+        >
           <Image
             src={ABOUT_IMAGE}
             alt="Amanda Pagano trabajando en desarrollo Full Stack"
             fill
             sizes="(max-width: 1024px) 100vw, 30vw"
-            className="object-cover grayscale transition-[filter,transform] duration-[900ms] ease-out group-hover:scale-[1.03] group-hover:grayscale-0"
+            className={cn(
+              "object-cover grayscale transition-[filter,transform] duration-[900ms] ease-out group-hover:scale-[1.03] group-hover:grayscale-0",
+              isInView && "max-lg:grayscale-0"
+            )}
           />
         </div>
       </motion.div>

@@ -33,9 +33,7 @@ export function Footer() {
         <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-3">
           {/* Correo electrónico visible y clickeable */}
           <a
-            href="https://mail.google.com/mail/?view=cm&fs=1&to=amandapagano05@gmail.com"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="mailto:amandapagano05@gmail.com"
             className="text-[#a1a1aa] transition-colors duration-300 hover:text-gold focus:text-gold focus:outline-none"
           >
             Email

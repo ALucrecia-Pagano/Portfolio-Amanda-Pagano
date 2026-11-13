@@ -1,12 +1,16 @@
 "use client";
 
-import React from "react";
+import React, { useRef } from "react";
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { motion, useInView } from "framer-motion";
+import { cn } from "@/lib/utils";
 
 const HERO_IMAGE = "/foto-perfil.jpg";
 
 export function Hero() {
+  const imageRef = useRef<HTMLDivElement>(null);
+  const isInView = useInView(imageRef, { amount: 0.5 });
+
   return (
     <section className="relative grid grid-cols-1 items-center gap-14 lg:grid-cols-12 lg:gap-8">
       {/* Lado izquierdo — Texto */}
@@ -53,14 +57,20 @@ export function Hero() {
         transition={{ duration: 0.7, delay: 0.15 }}
         className="group relative mx-auto w-full max-w-md lg:col-span-6 lg:max-w-none"
       >
-        <div className="relative aspect-[3/4] w-full overflow-hidden bg-[#111111]">
+        <div
+          ref={imageRef}
+          className="relative aspect-[3/4] w-full overflow-hidden bg-[#111111]"
+        >
           <Image
             src={HERO_IMAGE}
             alt="Amanda Pagano programando con múltiples monitores"
             fill
             priority
             sizes="(max-width: 1024px) 100vw, 40vw"
-            className="object-cover grayscale transition-[filter,transform] duration-[900ms] ease-out group-hover:scale-[1.03] group-hover:grayscale-0"
+            className={cn(
+              "object-cover grayscale transition-[filter,transform] duration-[900ms] ease-out group-hover:scale-[1.03] group-hover:grayscale-0",
+              isInView && "max-lg:grayscale-0"
+            )}
           />
         </div>
       </motion.div>
