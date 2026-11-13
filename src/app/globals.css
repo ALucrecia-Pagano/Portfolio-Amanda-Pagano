@@ -11,6 +11,7 @@
 
   html {
     scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
     color-scheme: dark;
     background-color: var(--bg-base);
     color: #f4f4f5;

@@ -1,7 +1,8 @@
 "use client";
 
-import React from "react";
-import { motion } from "framer-motion";
+import React, { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Menu, X } from "lucide-react";
 
 const NAV_LINKS = [
   { name: "Home", href: "#" },
@@ -32,7 +33,7 @@ function Logo() {
     <a
       href="#"
       aria-label="Amanda Pagano — Inicio"
-      className="group flex items-center gap-3 text-white"
+      className="group flex shrink-0 items-center gap-3 text-white"
     >
       <svg
         width="34"
@@ -40,7 +41,7 @@ function Logo() {
         viewBox="0 0 40 40"
         fill="none"
         aria-hidden="true"
-        className="transition-transform duration-500 ease-out group-hover:rotate-[-4deg]"
+        className="shrink-0 transition-transform duration-500 ease-out group-hover:rotate-[-4deg]"
       >
         <path
           d="M20 5 L35 35 H28.4 L25.2 27.5 H14.8 L11.6 35 H5 L20 5 Z M20 16.5 L16.6 22.6 H23.4 L20 16.5 Z"
@@ -79,7 +80,7 @@ function NavLink({
 
 export function Sidebar() {
   return (
-    <aside className="fixed inset-y-0 left-0 z-40 hidden w-[15%] flex-col justify-between border-r border-white/[0.06] bg-[#0a0a0a] px-10 py-14 md:flex">
+    <aside className="fixed inset-y-0 left-0 z-40 hidden w-60 flex-col justify-between border-r border-white/[0.06] bg-[#0a0a0a] px-10 py-14 lg:flex">
       <div className="flex flex-col gap-20">
         <Logo />
 
@@ -105,23 +106,61 @@ export function Sidebar() {
 }
 
 export function MobileNav() {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const handleLinkClick = (
+    e: React.MouseEvent<HTMLAnchorElement>,
+    href: string
+  ) => {
+    e.preventDefault();
+    setIsOpen(false);
+    setTimeout(() => {
+      if (href === "#") window.scrollTo({ top: 0, behavior: "smooth" });
+      else document.querySelector(href)?.scrollIntoView({ behavior: "smooth" });
+    }, 300);
+  };
+
   return (
-    <header className="fixed inset-x-0 top-0 z-40 flex items-center justify-between border-b border-white/[0.06] bg-[#0a0a0a]/90 px-6 py-4 backdrop-blur-md md:hidden">
-      <Logo />
-      <nav aria-label="Navegación principal">
-        <ul className="flex items-center gap-5">
-          {NAV_LINKS.map((link) => (
-            <li key={link.name}>
-              <a
-                href={link.href}
-                className="text-xs font-medium text-[#a1a1aa] transition-colors duration-300 hover:text-white"
-              >
-                {link.name}
-              </a>
-            </li>
-          ))}
-        </ul>
-      </nav>
+    <header className="fixed inset-x-0 top-0 z-50 border-b border-white/[0.06] bg-[#0a0a0a]/90 backdrop-blur-md lg:hidden">
+      <div className="flex items-center justify-between px-6 py-4">
+        <Logo />
+        <button
+          type="button"
+          onClick={() => setIsOpen((prev) => !prev)}
+          aria-label={isOpen ? "Cerrar menú" : "Abrir menú"}
+          aria-expanded={isOpen}
+          className="p-2 text-[#a1a1aa] transition-colors hover:text-white"
+        >
+          {isOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+        </button>
+      </div>
+
+      <AnimatePresence>
+        {isOpen && (
+          <motion.nav
+            aria-label="Navegación principal"
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: "auto", opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.25 }}
+            className="overflow-hidden border-t border-white/[0.06]"
+          >
+            <ul className="flex flex-col px-6 py-4">
+              {NAV_LINKS.map((link) => (
+                <li key={link.name}>
+                  <a
+                    href={link.href}
+                    onClick={(e) => handleLinkClick(e, link.href)}
+                    className="block py-3 text-sm font-medium tracking-wide text-[#a1a1aa] transition-colors hover:text-white"
+                  >
+                    {link.name}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </motion.nav>
+        )}
+      </AnimatePresence>
     </header>
   );
 }

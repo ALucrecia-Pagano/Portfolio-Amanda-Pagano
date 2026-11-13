@@ -24,7 +24,7 @@ export function Hero() {
           initial={{ opacity: 0, y: 22 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="mt-6 font-serif text-6xl font-light leading-[0.95] tracking-tight text-white sm:text-7xl xl:text-8xl"
+          className="mt-6 font-serif text-5xl font-light leading-[0.95] tracking-tight text-white sm:text-7xl xl:text-8xl"
         >
           Full Stack
           <br />
@@ -51,7 +51,7 @@ export function Hero() {
         initial={{ opacity: 0, y: 28 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.7, delay: 0.15 }}
-        className="group relative lg:col-span-6"
+        className="group relative mx-auto w-full max-w-md lg:col-span-6 lg:max-w-none"
       >
         <div className="relative aspect-[3/4] w-full overflow-hidden bg-[#111111]">
           <Image

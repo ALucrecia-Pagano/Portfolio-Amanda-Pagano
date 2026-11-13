@@ -92,7 +92,7 @@ export default function RootLayout({
       <body className="bg-[#0a0a0a] font-sans text-white antialiased selection:bg-gold/25 selection:text-white">
         <MobileNav />
         <Sidebar />
-        <main className="min-h-screen w-full bg-[#0a0a0a] px-6 py-24 md:ml-[15%] md:w-[85%] md:px-12 lg:px-24 lg:py-28">
+        <main className="min-h-screen w-full bg-[#0a0a0a] px-6 py-24 sm:px-10 lg:ml-60 lg:w-[calc(100%-15rem)] lg:px-16 lg:py-28 xl:px-24">
           {children}
         </main>
       </body>

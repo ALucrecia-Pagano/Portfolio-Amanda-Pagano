@@ -83,7 +83,7 @@ export function PortfolioSection() {
                 />
 
                 {/* Overlay oscuro translúcido */}
-                <div className="absolute inset-0 flex flex-col justify-end bg-black/60 p-7 opacity-0 transition-opacity duration-500 ease-out group-hover:opacity-100">
+                <div className="absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-black/85 via-black/30 to-transparent p-5 opacity-100 transition-opacity duration-500 ease-out sm:p-7 lg:bg-black/60 lg:bg-none lg:opacity-0 lg:group-hover:opacity-100">
                   <h3 className="font-serif text-xl font-light tracking-tight text-white">
                     {project.title}
                   </h3>
