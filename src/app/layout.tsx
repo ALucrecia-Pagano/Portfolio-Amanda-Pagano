@@ -1,6 +1,8 @@
 import type { Metadata, Viewport } from "next";
 import { Cormorant_Garamond, Inter } from "next/font/google";
 import { Sidebar, MobileNav } from "@/components/Sidebar";
+import { Providers } from "@/components/Providers";
+import { ScrollProgress } from "@/components/ScrollProgress";
 import "./globals.css";
 
 const serif = Cormorant_Garamond({
@@ -19,7 +21,6 @@ const sans = Inter({
 
 export const viewport: Viewport = {
   themeColor: "#0a0a0c",
-  colorScheme: "dark",
   width: "device-width",
   initialScale: 1,
 };
@@ -88,13 +89,20 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="es" className={`scroll-smooth dark ${serif.variable} ${sans.variable}`}>
-      <body className="bg-[#0a0a0a] font-sans text-white antialiased selection:bg-gold/25 selection:text-white">
-        <MobileNav />
-        <Sidebar />
-        <main className="min-h-screen w-full bg-[#0a0a0a] px-6 py-24 sm:px-10 lg:ml-60 lg:w-[calc(100%-15rem)] lg:px-16 lg:py-28 xl:px-24">
-          {children}
-        </main>
+    <html
+      lang="es"
+      suppressHydrationWarning
+      className={`scroll-smooth ${serif.variable} ${sans.variable}`}
+    >
+      <body className="bg-base font-sans text-fg antialiased transition-colors duration-300 selection:bg-gold/25 selection:text-fg">
+        <Providers>
+          <ScrollProgress />
+          <MobileNav />
+          <Sidebar />
+          <main className="min-h-screen w-full bg-base px-6 py-24 sm:px-10 lg:ml-60 lg:w-[calc(100%-15rem)] lg:px-16 lg:py-28 xl:px-24">
+            {children}
+          </main>
+        </Providers>
       </body>
     </html>
   );

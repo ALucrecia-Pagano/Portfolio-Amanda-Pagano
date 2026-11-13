@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
+import { ThemeToggle } from "@/components/ThemeToggle";
 
 const NAV_LINKS = [
   { name: "Home", href: "#" },
@@ -33,7 +34,7 @@ function Logo() {
     <a
       href="#"
       aria-label="Amanda Pagano — Inicio"
-      className="group flex shrink-0 items-center gap-3 text-white"
+      className="group flex shrink-0 items-center gap-3 text-fg"
     >
       <svg
         width="34"
@@ -48,7 +49,7 @@ function Logo() {
           fill="currentColor"
         />
       </svg>
-      <span className="text-lg font-light tracking-[0.28em] uppercase text-white">
+      <span className="text-lg font-light tracking-[0.28em] uppercase text-fg">
         Amanda
       </span>
     </a>
@@ -66,12 +67,12 @@ function NavLink({
     <motion.li variants={itemVariants}>
       <a
         href={href}
-        className="group relative inline-flex flex-col py-1 text-[#a1a1aa] transition-colors duration-300 ease-out hover:text-white"
+        className="group relative inline-flex flex-col py-1 text-muted transition-colors duration-300 ease-out hover:text-fg"
       >
         <span className="text-sm font-medium tracking-wide">{name}</span>
         <span
           aria-hidden="true"
-          className="mt-2 block h-px w-full origin-left scale-x-0 bg-white transition-transform duration-300 ease-out group-hover:scale-x-100"
+          className="mt-2 block h-px w-full origin-left scale-x-0 bg-fg transition-transform duration-300 ease-out group-hover:scale-x-100"
         />
       </a>
     </motion.li>
@@ -80,7 +81,7 @@ function NavLink({
 
 export function Sidebar() {
   return (
-    <aside className="fixed inset-y-0 left-0 z-40 hidden w-60 flex-col justify-between border-r border-white/[0.06] bg-[#0a0a0a] px-10 py-14 lg:flex">
+    <aside className="fixed inset-y-0 left-0 z-40 hidden w-60 flex-col justify-between border-r border-fg/[0.06] bg-base px-10 py-14 lg:flex">
       <div className="flex flex-col gap-20">
         <Logo />
 
@@ -98,9 +99,12 @@ export function Sidebar() {
         </motion.nav>
       </div>
 
-      <p className="text-[11px] font-light uppercase tracking-[0.3em] text-[#a1a1aa]/60">
-        Portfolio
-      </p>
+      <div className="flex items-center justify-between">
+        <p className="text-[11px] font-light uppercase tracking-[0.3em] text-muted/60">
+          Portfolio
+        </p>
+        <ThemeToggle />
+      </div>
     </aside>
   );
 }
@@ -121,18 +125,21 @@ export function MobileNav() {
   };
 
   return (
-    <header className="fixed inset-x-0 top-0 z-50 border-b border-white/[0.06] bg-[#0a0a0a]/90 backdrop-blur-md lg:hidden">
+    <header className="fixed inset-x-0 top-0 z-50 border-b border-fg/[0.06] bg-base/90 backdrop-blur-md lg:hidden">
       <div className="flex items-center justify-between px-6 py-4">
         <Logo />
-        <button
-          type="button"
-          onClick={() => setIsOpen((prev) => !prev)}
-          aria-label={isOpen ? "Cerrar menú" : "Abrir menú"}
-          aria-expanded={isOpen}
-          className="p-2 text-[#a1a1aa] transition-colors hover:text-white"
-        >
-          {isOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
-        </button>
+        <div className="flex items-center gap-1">
+          <ThemeToggle />
+          <button
+            type="button"
+            onClick={() => setIsOpen((prev) => !prev)}
+            aria-label={isOpen ? "Cerrar menú" : "Abrir menú"}
+            aria-expanded={isOpen}
+            className="p-2 text-muted transition-colors hover:text-fg"
+          >
+            {isOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+          </button>
+        </div>
       </div>
 
       <AnimatePresence>
@@ -143,7 +150,7 @@ export function MobileNav() {
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.25 }}
-            className="overflow-hidden border-t border-white/[0.06]"
+            className="overflow-hidden border-t border-fg/[0.06]"
           >
             <ul className="flex flex-col px-6 py-4">
               {NAV_LINKS.map((link) => (
@@ -151,7 +158,7 @@ export function MobileNav() {
                   <a
                     href={link.href}
                     onClick={(e) => handleLinkClick(e, link.href)}
-                    className="block py-3 text-sm font-medium tracking-wide text-[#a1a1aa] transition-colors hover:text-white"
+                    className="block py-3 text-sm font-medium tracking-wide text-muted transition-colors hover:text-fg"
                   >
                     {link.name}
                   </a>

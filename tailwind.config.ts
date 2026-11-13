@@ -15,8 +15,12 @@ const config: Config = {
         mono: ["var(--font-mono)", "monospace"],
       },
       colors: {
+        base: "rgb(var(--color-base) / <alpha-value>)",
+        surface: "rgb(var(--color-surface) / <alpha-value>)",
+        fg: "rgb(var(--color-fg) / <alpha-value>)",
+        muted: "rgb(var(--color-muted) / <alpha-value>)",
         gold: {
-          DEFAULT: "#C5A059",
+          DEFAULT: "rgb(var(--color-gold) / <alpha-value>)",
           soft: "rgba(197, 160, 89, 0.30)",
           faint: "rgba(197, 160, 89, 0.18)",
         },

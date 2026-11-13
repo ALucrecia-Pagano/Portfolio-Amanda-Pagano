@@ -44,7 +44,7 @@ export function AboutSection() {
       >
         <div
           ref={imageRef}
-          className="relative aspect-[3/4] w-full overflow-hidden bg-[#111111]"
+          className="relative aspect-[3/4] w-full overflow-hidden bg-surface"
         >
           <Image
             src={ABOUT_IMAGE}
@@ -67,7 +67,7 @@ export function AboutSection() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-80px" }}
-          className="font-serif text-3xl font-light leading-tight tracking-tight text-white sm:text-4xl lg:text-5xl"
+          className="font-serif text-3xl font-light leading-tight tracking-tight text-fg sm:text-4xl lg:text-5xl"
         >
           Desarrolladora Full Stack profesional y dedicada
         </motion.h2>
@@ -78,7 +78,7 @@ export function AboutSection() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-80px" }}
-          className="mt-8 max-w-2xl text-base leading-relaxed text-[#a1a1aa] sm:text-lg"
+          className="mt-8 max-w-2xl text-base leading-relaxed text-muted sm:text-lg"
         >
           Con más de dos años gestionando operaciones de e-commerce reales y una
           formación avanzada en ingeniería de software, diseño soluciones que
@@ -102,7 +102,7 @@ export function AboutSection() {
           <ul className="mt-5 flex flex-wrap items-center gap-x-4 gap-y-2">
             {TECH_STACK.map((tech, index) => (
               <li key={tech} className="flex items-center gap-4">
-                <span className="font-serif text-lg font-light text-white/80">
+                <span className="font-serif text-lg font-light text-fg/80">
                   {tech}
                 </span>
                 {index < TECH_STACK.length - 1 && (

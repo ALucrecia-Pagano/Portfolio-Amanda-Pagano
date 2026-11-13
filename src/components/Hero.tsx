@@ -28,7 +28,7 @@ export function Hero() {
           initial={{ opacity: 0, y: 22 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="mt-6 font-serif text-5xl font-light leading-[0.95] tracking-tight text-white sm:text-7xl xl:text-8xl"
+          className="mt-6 font-serif text-5xl font-light leading-[0.95] tracking-tight text-fg sm:text-7xl xl:text-8xl"
         >
           Full Stack
           <br />
@@ -40,7 +40,7 @@ export function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.25 }}
           href="#contacto"
-          className="group mt-12 inline-flex items-center gap-3 border-b border-gold/40 pb-3 font-sans text-[11px] font-medium uppercase tracking-[0.3em] text-white transition-colors duration-300 ease-out hover:border-gold hover:text-gold focus:border-gold focus:text-gold focus:outline-none"
+          className="group mt-12 inline-flex items-center gap-3 border-b border-gold/40 pb-3 font-sans text-[11px] font-medium uppercase tracking-[0.3em] text-fg transition-colors duration-300 ease-out hover:border-gold hover:text-gold focus:border-gold focus:text-gold focus:outline-none"
         >
           Contáctame
           <span
@@ -59,7 +59,7 @@ export function Hero() {
       >
         <div
           ref={imageRef}
-          className="relative aspect-[3/4] w-full overflow-hidden bg-[#111111]"
+          className="relative aspect-[3/4] w-full overflow-hidden bg-surface"
         >
           <Image
             src={HERO_IMAGE}

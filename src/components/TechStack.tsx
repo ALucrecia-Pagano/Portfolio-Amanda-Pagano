@@ -70,7 +70,7 @@ export function TechStack() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.55, delay: 0.1 }}
-          className="mt-5 font-serif text-3xl font-light tracking-tight text-white sm:text-4xl lg:text-5xl"
+          className="mt-5 font-serif text-3xl font-light tracking-tight text-fg sm:text-4xl lg:text-5xl"
         >
           Stack Tecnológico
         </motion.h2>
@@ -79,7 +79,7 @@ export function TechStack() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.55, delay: 0.2 }}
-          className="mt-6 max-w-xl text-sm leading-relaxed text-[#a1a1aa] sm:text-base"
+          className="mt-6 max-w-xl text-sm leading-relaxed text-muted sm:text-base"
         >
           Herramientas troncales aplicadas al desarrollo de software, modelado de
           datos y flujos agénticos con IA.
@@ -110,15 +110,15 @@ export function TechStack() {
               </span>
 
               <div className="sm:col-span-4">
-                <h3 className="font-serif text-2xl font-light tracking-tight text-white">
+                <h3 className="font-serif text-2xl font-light tracking-tight text-fg">
                   {data.title}
                 </h3>
-                <p className="mt-2 text-sm leading-relaxed text-[#a1a1aa]">
+                <p className="mt-2 text-sm leading-relaxed text-muted">
                   {data.description}
                 </p>
               </div>
 
-              <p className="font-serif text-lg font-light leading-relaxed text-white/85 sm:col-span-7">
+              <p className="font-serif text-lg font-light leading-relaxed text-fg/85 sm:col-span-7">
                 {data.skills.join("  /  ")}
               </p>
             </div>

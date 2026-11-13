@@ -3,45 +3,46 @@
 @tailwind utilities;
 
 @layer base {
-  :root {
-    --bg-base: #0a0a0c;
-    --bg-surface: #111116;
-    --border-subtle: rgba(255, 255, 255, 0.08);
+  /* Tema oscuro (por defecto). Canales RGB para que funcione la opacidad de Tailwind (ej: text-fg/80) */
+  :root,
+  .dark {
+    --color-base: 10 10 10;
+    --color-surface: 17 17 17;
+    --color-fg: 255 255 255;
+    --color-muted: 161 161 170;
+    --color-gold: 197 160 89;
+    --scrollbar-thumb: #1f1f28;
+    --scrollbar-thumb-hover: #2e2e3d;
+  }
+
+  /* Tema claro: crema cálido + bronce (contraste AA sobre el crema) */
+  .light {
+    --color-base: 244 241 234;
+    --color-surface: 236 231 222;
+    --color-fg: 28 26 23;
+    --color-muted: 95 88 78;
+    --color-gold: 122 90 34;
+    --scrollbar-thumb: #d6cfc2;
+    --scrollbar-thumb-hover: #bfb6a6;
   }
 
   html {
     scroll-behavior: smooth;
     scroll-padding-top: 5rem;
-    color-scheme: dark;
-    background-color: var(--bg-base);
-    color: #f4f4f5;
+    background-color: rgb(var(--color-base));
+    color: rgb(var(--color-fg));
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
   }
 
-  /* Selección de texto */
   ::selection {
-    background-color: rgba(197, 160, 89, 0.28);
-    color: #ffffff;
+    background-color: rgb(var(--color-gold) / 0.28);
+    color: rgb(var(--color-fg));
   }
 
-  /* Barra de scroll personalizada ultrafina */
-  ::-webkit-scrollbar {
-    width: 6px;
-    height: 6px;
-  }
-
-  ::-webkit-scrollbar-track {
-    background: #0a0a0c;
-  }
-
-  ::-webkit-scrollbar-thumb {
-    background: #1f1f28;
-    border-radius: 9999px;
-  }
-
-  ::-webkit-scrollbar-thumb:hover {
-    background: #2e2e3d;
-  }
+  ::-webkit-scrollbar { width: 6px; height: 6px; }
+  ::-webkit-scrollbar-track { background: rgb(var(--color-base)); }
+  ::-webkit-scrollbar-thumb { background: var(--scrollbar-thumb); border-radius: 9999px; }
+  ::-webkit-scrollbar-thumb:hover { background: var(--scrollbar-thumb-hover); }
 }

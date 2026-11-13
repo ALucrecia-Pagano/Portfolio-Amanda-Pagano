@@ -90,7 +90,7 @@ export function ServicesSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.55, delay: 0.1 }}
-          className="mt-5 font-serif text-3xl font-light tracking-tight text-white sm:text-4xl lg:text-5xl"
+          className="mt-5 font-serif text-3xl font-light tracking-tight text-fg sm:text-4xl lg:text-5xl"
         >
           Mis Servicios
         </motion.h2>
@@ -122,11 +122,11 @@ export function ServicesSection() {
                 />
               </span>
 
-              <h3 className="font-serif text-2xl font-light tracking-tight text-white transition-colors duration-300 group-hover:text-gold sm:col-span-4">
+              <h3 className="font-serif text-2xl font-light tracking-tight text-fg transition-colors duration-300 group-hover:text-gold sm:col-span-4">
                 {title}
               </h3>
 
-              <p className="text-sm leading-relaxed text-[#a1a1aa] sm:col-span-7">
+              <p className="text-sm leading-relaxed text-muted sm:col-span-7">
                 {description}
               </p>
             </a>

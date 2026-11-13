@@ -47,7 +47,7 @@ export function PortfolioSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.55, delay: 0.1 }}
-          className="mt-5 font-serif text-3xl font-light tracking-tight text-white sm:text-4xl lg:text-5xl"
+          className="mt-5 font-serif text-3xl font-light tracking-tight text-fg sm:text-4xl lg:text-5xl"
         >
           Portafolio
         </motion.h2>

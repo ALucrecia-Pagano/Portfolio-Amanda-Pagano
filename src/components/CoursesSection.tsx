@@ -63,7 +63,7 @@ export function CoursesSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.55, delay: 0.1 }}
-          className="mt-5 font-serif text-3xl font-light tracking-tight text-white sm:text-4xl lg:text-5xl"
+          className="mt-5 font-serif text-3xl font-light tracking-tight text-fg sm:text-4xl lg:text-5xl"
         >
           Cursos y Certificaciones
         </motion.h2>
@@ -86,11 +86,11 @@ export function CoursesSection() {
               <span className="font-serif text-sm font-light text-gold sm:col-span-1">
                 {String(index + 1).padStart(2, "0")}
               </span>
-              <h3 className="font-serif text-xl font-light leading-snug text-white sm:col-span-9">
+              <h3 className="font-serif text-xl font-light leading-snug text-fg sm:col-span-9">
                 {course.title}
               </h3>
               {course.institution && (
-                <p className="font-sans text-[10px] font-medium uppercase tracking-[0.25em] text-[#a1a1aa] sm:col-span-2 sm:text-right">
+                <p className="font-sans text-[10px] font-medium uppercase tracking-[0.25em] text-muted sm:col-span-2 sm:text-right">
                   {course.institution}
                 </p>
               )}

@@ -17,11 +17,11 @@ export function Footer() {
   return (
     <footer
       id="footer"
-      className="relative border-t border-gold/20 bg-[#0a0a0a] py-12"
+      className="relative border-t border-gold/20 bg-base py-12"
     >
-      <div className="flex flex-col items-center justify-between gap-8 text-[11px] text-[#a1a1aa] sm:flex-row">
+      <div className="flex flex-col items-center justify-between gap-8 text-[11px] text-muted sm:flex-row">
         <div className="flex items-center gap-2">
-          <span className="font-serif text-lg font-light text-white">
+          <span className="font-serif text-lg font-light text-fg">
             {profile.name}
           </span>
           <span aria-hidden="true" className="text-gold/60">
@@ -34,7 +34,7 @@ export function Footer() {
           {/* Correo electrónico visible y clickeable */}
           <a
             href="mailto:amandapagano05@gmail.com"
-            className="text-[#a1a1aa] transition-colors duration-300 hover:text-gold focus:text-gold focus:outline-none"
+            className="text-muted transition-colors duration-300 hover:text-gold focus:text-gold focus:outline-none"
           >
             Email
           </a>
@@ -43,7 +43,7 @@ export function Footer() {
             href="https://wa.me/5492617618692"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-[#a1a1aa] transition-colors duration-300 hover:text-gold focus:text-gold focus:outline-none"
+            className="text-muted transition-colors duration-300 hover:text-gold focus:text-gold focus:outline-none"
           >
             WhatsApp
           </a>
@@ -52,7 +52,7 @@ export function Footer() {
             href={githubUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-1.5 text-[#a1a1aa] transition-colors duration-300 hover:text-gold focus:text-gold focus:outline-none"
+            className="inline-flex items-center gap-1.5 text-muted transition-colors duration-300 hover:text-gold focus:text-gold focus:outline-none"
           >
             <Github className="h-3.5 w-3.5" strokeWidth={1.5} aria-hidden="true" />
             GitHub
@@ -61,7 +61,7 @@ export function Footer() {
           <button
             onClick={scrollToTop}
             aria-label="Volver arriba"
-            className="flex h-8 w-8 items-center justify-center rounded-full border border-gold/20 text-[#a1a1aa] transition-colors duration-300 hover:border-gold/60 hover:text-gold focus:border-gold/60 focus:text-gold focus:outline-none"
+            className="flex h-8 w-8 items-center justify-center rounded-full border border-gold/20 text-muted transition-colors duration-300 hover:border-gold/60 hover:text-gold focus:border-gold/60 focus:text-gold focus:outline-none"
           >
             <ArrowUp className="h-3.5 w-3.5" />
           </button>
